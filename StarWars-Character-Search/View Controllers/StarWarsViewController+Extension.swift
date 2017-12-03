@@ -33,10 +33,8 @@ extension StarWarsViewController: UITableViewDelegate, UITableViewDataSource, UI
         return UITableViewCell()
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchWord = searchBar.text {
-            self.searchTerm = searchWord
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchTerm = searchText
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
